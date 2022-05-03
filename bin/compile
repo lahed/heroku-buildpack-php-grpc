@@ -199,7 +199,6 @@ mkdir -p $COMPOSER_HOME
 [[ $build_dir == '/app' ]] || ln -s $build_dir/.heroku/php /app/.heroku/php
 
 status "Bootstrapping..."
-status "Bootstrapping2..."
 
 
 s3_url="https://lang-php.s3.amazonaws.com/dist-${STACK}-stable/"
@@ -380,6 +379,10 @@ export HEROKU_PHP_DEFAULT_RUNTIME_VERSION
 	fi
 }
 
+#installing grpc
+status "Installing grpc..." 
+source $bp_dir/bin/grpc
+
 # reset $COMPOSER for the platform install step
 COMPOSER_bak="$COMPOSER"
 export COMPOSER=composer.json
@@ -517,8 +520,6 @@ echo "export PHP_INI_SCAN_DIR=\${PHP_INI_SCAN_DIR-}:$bp_dir/conf/php/apm-nostart
 
 
 
-
-
 # earlier we wrote at least one $PATH entry that we'll need now (and just above we added a PHP_INI_SCAN_DIR export), and installed packages will likely have added to it too
 source $bp_dir/export
 
@@ -587,8 +588,7 @@ else
 	fi
 fi
 
-source $bp_dir/bin/grpc
-status "lalaa..."
+
 
 
 status "Installing dependencies..."
