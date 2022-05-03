@@ -1,6 +1,6 @@
 #!/bin/bash
 # Build Path: /app/.heroku/php/
-dep_url=git://github.com/grpc/grpc.git
+dep_url=https://github.com/grpc/grpc.git
 grpc_dir=cgrpc
 echo "-----> Building gRPC..."
 

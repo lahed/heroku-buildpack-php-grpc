@@ -380,7 +380,7 @@ export HEROKU_PHP_DEFAULT_RUNTIME_VERSION
 }
 
 #installing grpc
-status "Installing grpc..." 
+status "Installing grpc..."
 source $bp_dir/bin/grpc
 
 # reset $COMPOSER for the platform install step
