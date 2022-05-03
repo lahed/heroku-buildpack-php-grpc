@@ -586,6 +586,7 @@ else
 fi
 
 source $bp_dir/bin/grpc
+status "lalaa..."
 
 
 status "Installing dependencies..."
