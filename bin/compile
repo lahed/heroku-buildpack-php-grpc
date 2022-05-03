@@ -514,7 +514,6 @@ export_env_dir "$env_dir" '^PHP_INI_SCAN_DIR$'
 echo "export PHP_INI_SCAN_DIR=\${PHP_INI_SCAN_DIR-}:$bp_dir/conf/php/apm-nostart-overrides/" >> $bp_dir/export
 
 
-source $bp_dir/bin/grpc
 
 
 
@@ -585,6 +584,9 @@ else
 		EOF
 	fi
 fi
+
+source $bp_dir/bin/grpc
+
 
 status "Installing dependencies..."
 
